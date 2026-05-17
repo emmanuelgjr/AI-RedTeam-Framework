@@ -1,0 +1,16 @@
+{
+  "slug": "rebuff",
+  "name": "Rebuff",
+  "vendor": "Protect AI / community",
+  "type": "open-source",
+  "category": ["guardrail-testing", "prompt-testing"],
+  "what_it_does": "Prompt-injection detection library. Combines heuristics, vector-similarity to a corpus of known injections, and an LLM classifier; used both as a runtime defense and as a probe to evaluate defenses.",
+  "what_it_doesnt_do": "Not a comprehensive red-team harness — focused on PI detection. Like all pattern-and-classifier defenses, it can be bypassed by novel encodings; treat as defense in depth, not the sole gate.",
+  "best_for": ["Adding a baseline PI-detection layer", "Generating evaluation prompts that target your existing defenses"],
+  "not_for": ["Replacing structured prompting and least-privilege tool authorization"],
+  "pricing_summary": "Free.",
+  "integration_effort": "low",
+  "team_skill_required": "Basic Python.",
+  "url": "https://github.com/protectai/rebuff",
+  "last_reviewed": "2026-05-01"
+}

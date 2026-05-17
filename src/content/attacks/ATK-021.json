@@ -1,0 +1,59 @@
+{
+  "id": "ATK-021",
+  "name": "Supply Chain — Compromised Model Hub",
+  "category": "Model integrity",
+  "applies_to": [
+    "LLM",
+    "Traditional ML",
+    "Computer Vision",
+    "Multi-modal"
+  ],
+  "prerequisites": [
+    "Target organization downloads models from third-party model hubs (e.g., Hugging Face, internal model registries with weak provenance)."
+  ],
+  "test_approach": "Defensive assessment: the tester reviews provenance, signing, and verification controls for model downloads. The tester does not upload trojaned models to public hubs. Where authorized, the tester simulates ingestion of a known-test-trojaned model from a sanctioned internal mirror and observes whether detection controls trigger.",
+  "expected_evidence": [
+    "Configuration evidence for model verification at ingestion (signing, hash check).",
+    "Simulated-trojan ingestion logs.",
+    "SBOM-equivalent records for models in production."
+  ],
+  "detection_signals": [
+    "New model versions downloaded without corresponding verification logs.",
+    "Models from unknown publishers in production.",
+    "Anomalous behavior post-deployment (drift, unusual output patterns) that may indicate a backdoored model."
+  ],
+  "defensive_recommendations": [
+    "Maintain a model SBOM with publisher, version, hash, and verification status.",
+    "Require signing or hash verification before model deployment.",
+    "Pin model versions in production; do not auto-pull latest.",
+    "Reference AI-CTRL-004 (Vendor Due Diligence) and AI-CTRL-010 (Change Control)."
+  ],
+  "framework_mappings": {
+    "owasp_llm_top_10": [
+      "LLM05:2025"
+    ],
+    "mitre_atlas": [
+      "AML.T0010"
+    ],
+    "nist_ai_rmf": [
+      "MAP-4.1"
+    ]
+  },
+  "ai_controls_catalog_refs": [
+    "AI-CTRL-004",
+    "AI-CTRL-010"
+  ],
+  "references": [
+    {
+      "title": "OWASP LLM05:2025 — Improper Output Handling / Supply Chain",
+      "url": "https://genai.owasp.org/llm-top-10/"
+    },
+    {
+      "title": "MITRE ATLAS — Supply Chain Compromise",
+      "url": "https://atlas.mitre.org/"
+    }
+  ],
+  "author": "Emmanuel Guilherme Jr.",
+  "created": "2026-05-01",
+  "last_reviewed": "2026-05-01"
+}

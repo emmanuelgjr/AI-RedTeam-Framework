@@ -1,0 +1,16 @@
+{
+  "slug": "hiddenlayer",
+  "name": "HiddenLayer",
+  "vendor": "HiddenLayer",
+  "type": "commercial",
+  "category": ["model-eval", "automated-redteam"],
+  "what_it_does": "AI security platform with model scanning, monitoring, and adversarial testing. Has invested in supply-chain security for models and notable threat-intel content.",
+  "what_it_doesnt_do": "Some capability marketed as runtime protection is closer to detection than blocking; understand exactly what is enforced where before relying on it for compliance arguments.",
+  "best_for": ["Enterprises wanting model supply-chain coverage alongside red-team capability", "Buyers who value threat-intel publications as part of the vendor relationship"],
+  "not_for": ["Teams looking for a single-discipline product"],
+  "pricing_summary": "Enterprise; contact for pricing.",
+  "integration_effort": "medium",
+  "team_skill_required": "Moderate technical.",
+  "url": "https://hiddenlayer.com/",
+  "last_reviewed": "2026-05-01"
+}

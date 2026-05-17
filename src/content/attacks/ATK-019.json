@@ -1,0 +1,57 @@
+{
+  "id": "ATK-019",
+  "name": "Model Inversion / Membership Inference",
+  "category": "Model integrity",
+  "applies_to": [
+    "Traditional ML",
+    "LLM",
+    "Computer Vision"
+  ],
+  "prerequisites": [
+    "Target model was trained on data with privacy implications.",
+    "Model exposes predictions or confidence scores externally."
+  ],
+  "test_approach": "With written authorization, the tester applies membership-inference and (where applicable) model-inversion techniques to determine whether specific records were in the training set or to approximate training features. The tester reports attack success rate as a privacy-risk metric.",
+  "expected_evidence": [
+    "Test corpus used (with provenance).",
+    "Membership-inference accuracy metrics.",
+    "Comparison to baseline."
+  ],
+  "detection_signals": [
+    "Query patterns repeatedly probing the same input neighborhoods.",
+    "High-volume confidence-score retrieval characteristic of membership-inference setups."
+  ],
+  "defensive_recommendations": [
+    "Apply training-time mitigations (differential privacy where applicable).",
+    "Limit exposure of confidence scores externally; round or aggregate.",
+    "Reference AI-CTRL-013."
+  ],
+  "framework_mappings": {
+    "owasp_llm_top_10": [
+      "LLM06:2025"
+    ],
+    "mitre_atlas": [
+      "AML.T0024"
+    ],
+    "nist_ai_rmf": [
+      "MEASURE-2.10"
+    ]
+  },
+  "ai_controls_catalog_refs": [
+    "AI-CTRL-013",
+    "AI-CTRL-014"
+  ],
+  "references": [
+    {
+      "title": "Shokri et al. — Membership Inference Attacks Against Machine Learning Models",
+      "url": "https://arxiv.org/abs/1610.05820"
+    },
+    {
+      "title": "OWASP LLM06:2025 — Sensitive Information Disclosure",
+      "url": "https://genai.owasp.org/llm-top-10/"
+    }
+  ],
+  "author": "Emmanuel Guilherme Jr.",
+  "created": "2026-05-01",
+  "last_reviewed": "2026-05-01"
+}

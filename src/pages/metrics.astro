@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Metrics — AI Red Team Framework"
+  description="Engagement, program, and board-level metrics for an AI red team function."
+>
+  <section class="max-w-3xl mx-auto px-6 lg:px-8 py-12">
+    <p class="text-sm font-medium text-accent-700">Metrics</p>
+    <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900 mt-2">Three layers of metrics</h1>
+
+    <div class="prose prose-lg max-w-prose-wide mt-8">
+      <h2>Engagement metrics (per engagement)</h2>
+      <ul>
+        <li>% of selected attack patterns successfully exercised.</li>
+        <li># of findings by severity.</li>
+        <li>% of findings traced to a missing or weak control.</li>
+        <li>Report delivery against schedule.</li>
+        <li>Time to first finding.</li>
+      </ul>
+      <h2>Program metrics (quarterly)</h2>
+      <ul>
+        <li>Coverage: % of in-scope systems tested in the last 12 months.</li>
+        <li>Coverage: % of EU AI Act high-risk systems tested in the last 6 months.</li>
+        <li>Findings lifecycle (open / closed / past target).</li>
+        <li>Remediation acceptance rate.</li>
+        <li>Time-to-close by severity.</li>
+        <li>Repeat findings rate.</li>
+      </ul>
+      <h2>Board metrics (semi-annually)</h2>
+      <p>Three to five metrics. Coverage rate of high-risk AI systems. Number of unremediated critical / high findings. Number of systems with adversarial testing in last quarter. Trend in repeat findings. Maturity assessment delta.</p>
+      <p>Read <a href="/playbook/10-metrics">Playbook chapter 10</a> for context and anti-patterns.</p>
+    </div>
+  </section>
+</BaseLayout>

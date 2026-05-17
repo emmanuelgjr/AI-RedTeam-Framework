@@ -1,0 +1,16 @@
+{
+  "slug": "promptfoo",
+  "name": "Promptfoo",
+  "vendor": "Promptfoo",
+  "type": "freemium",
+  "category": ["model-eval", "prompt-testing", "automated-redteam"],
+  "what_it_does": "YAML-configured evaluation harness for LLM prompts and applications. Supports test cases, assertions, redteaming plugins, and side-by-side model comparison; integrates well with CI for regression evaluation and with both local and hosted model endpoints.",
+  "what_it_doesnt_do": "Not a guardrail enforcement product (it tests, it does not block at runtime). Some of the deeper agentic testing features are part of the paid tier; the OSS version is excellent for prompt-level eval but less complete for multi-tool agent assessments.",
+  "best_for": ["Application teams building regression-evaluable LLM features", "Comparing model providers/versions for the same use case", "Red teamers wanting structured, repeatable test runs from YAML"],
+  "not_for": ["Runtime guardrails", "Teams that prefer all-Python over YAML configuration ergonomics"],
+  "pricing_summary": "Free OSS core; paid tier for enterprise features.",
+  "integration_effort": "low",
+  "team_skill_required": "Comfortable with YAML config; basic CLI; helpful but not required: JS familiarity for custom assertions.",
+  "url": "https://www.promptfoo.dev/",
+  "last_reviewed": "2026-05-01"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "inspect",
+  "name": "Inspect AI",
+  "vendor": "UK AI Safety Institute",
+  "type": "open-source",
+  "category": ["model-eval", "automated-redteam"],
+  "what_it_does": "Framework for large-scale model evaluation with first-class support for agent and tool-use scenarios. Built by the UK AI Safety Institute; designed around the kinds of evaluations institutional safety teams actually need.",
+  "what_it_doesnt_do": "Aimed at sophisticated evaluators; the on-ramp is steeper than a YAML-config tool. Limited turn-key reporting; you assemble what you need.",
+  "best_for": ["Teams running agentic evaluations with tool-use, multi-step reasoning", "Safety-focused organizations matching public benchmark methodology", "Researchers building reusable eval suites"],
+  "not_for": ["Quick proof-of-concept for non-specialists"],
+  "pricing_summary": "Free (Apache 2.0).",
+  "integration_effort": "high",
+  "team_skill_required": "Strong Python; evaluation-method literacy; LLM-internals familiarity.",
+  "url": "https://inspect.ai-safety-institute.org.uk/",
+  "last_reviewed": "2026-05-01"
+}

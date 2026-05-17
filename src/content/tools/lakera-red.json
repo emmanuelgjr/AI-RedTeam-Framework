@@ -1,0 +1,16 @@
+{
+  "slug": "lakera-red",
+  "name": "Lakera Red",
+  "vendor": "Lakera",
+  "type": "commercial",
+  "category": ["automated-redteam"],
+  "what_it_does": "Commercial automated red-teaming for LLM applications. Continuous, multi-turn adversarial testing with reporting suitable for security teams; pairs with Lakera Guard for runtime protection.",
+  "what_it_doesnt_do": "Coverage is shaped by Lakera's threat intelligence; if your threat model is unusual, expect to supplement with custom testing. Lock-in concern: paired use with Lakera Guard is common but optional.",
+  "best_for": ["Regulated enterprises wanting commercial accountability and reporting", "Continuous testing without building/maintaining the harness in-house"],
+  "not_for": ["Teams with strong in-house AI security engineering preferring deep customization"],
+  "pricing_summary": "Commercial; pricing not publicly listed.",
+  "integration_effort": "medium",
+  "team_skill_required": "Moderate technical comfort; configuration over coding.",
+  "url": "https://www.lakera.ai/",
+  "last_reviewed": "2026-05-01"
+}

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const attacks = (await getCollection('attacks')).map((a) => a.data);
+const categories = Array.from(new Set(attacks.map((a) => a.category))).sort();
+---
+
+<BaseLayout
+  title="Attack Pattern Library — AI Red Team Framework"
+  description={`${attacks.length} attack patterns mapped to OWASP LLM Top 10, OWASP Agentic Top 10, MITRE ATLAS, and NIST AI RMF.`}
+>
+  <section class="max-w-content mx-auto px-6 lg:px-8 py-12">
+    <p class="text-sm font-medium text-accent-700">Attack patterns</p>
+    <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900 mt-2">
+      {attacks.length} attack patterns
+    </h1>
+    <p class="mt-3 text-ink-600 max-w-prose-wide">
+      Each pattern includes prerequisites, defensive test approach, expected
+      evidence, detection signals, and defensive recommendations. Patterns are
+      framed as <em>how to test defenses against</em> — not as offensive recipes.
+    </p>
+
+    {categories.map((cat) => (
+      <div class="mt-12">
+        <h2 class="font-display font-semibold text-2xl text-ink-900 tracking-tight">{cat}</h2>
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+          {attacks
+            .filter((a) => a.category === cat)
+            .map((a) => (
+              <li>
+                <a href={`/attacks/${a.id}`} class="card-interactive block h-full">
+                  <p class="font-mono text-xs text-ink-500">{a.id}</p>
+                  <h3 class="text-lg font-semibold text-ink-900 mt-1">{a.name}</h3>
+                  <p class="text-sm text-ink-600 mt-2 line-clamp-2">{a.test_approach}</p>
+                  <div class="mt-3 flex flex-wrap gap-1.5">
+                    {a.applies_to.slice(0, 3).map((t) => (
+                      <span class="badge-neutral">{t}</span>
+                    ))}
+                  </div>
+                </a>
+              </li>
+            ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+</BaseLayout>

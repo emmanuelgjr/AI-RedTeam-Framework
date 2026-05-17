@@ -1,0 +1,16 @@
+{
+  "slug": "giskard",
+  "name": "Giskard",
+  "vendor": "Giskard",
+  "type": "freemium",
+  "category": ["model-eval"],
+  "what_it_does": "Open-source testing framework for ML and LLM applications. Generates test suites that probe for performance, robustness, hallucination, bias, and prompt injection; supports a hub for collaboration and result tracking.",
+  "what_it_doesnt_do": "The auto-generated tests can be a starting point but typically need human curation for domain-specific assessments. Some of the deeper enterprise features (hub, collaboration) are paid.",
+  "best_for": ["ML engineering teams adding LLM/agentic testing to existing ML test discipline", "First-pass risk assessment of a new LLM application"],
+  "not_for": ["Replacing a dedicated AI red team — augments, does not substitute"],
+  "pricing_summary": "Free OSS; paid for the hosted hub.",
+  "integration_effort": "medium",
+  "team_skill_required": "Python; existing ML testing experience helpful.",
+  "url": "https://www.giskard.ai/",
+  "last_reviewed": "2026-05-01"
+}

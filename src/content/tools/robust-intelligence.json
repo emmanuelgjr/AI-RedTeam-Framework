@@ -1,0 +1,16 @@
+{
+  "slug": "robust-intelligence",
+  "name": "Robust Intelligence",
+  "vendor": "Cisco (Robust Intelligence)",
+  "type": "commercial",
+  "category": ["automated-redteam", "model-eval", "guardrail-testing"],
+  "what_it_does": "Enterprise platform for AI risk: pre-deployment model validation, continuous monitoring, and runtime AI firewall. Covers both predictive ML and generative AI workloads with reporting designed for risk and compliance functions.",
+  "what_it_doesnt_do": "Enterprise pricing and procurement timeline. Some features overlap with what mature in-house teams can build with open source; the value is the integration, support, and reporting, not novel algorithms.",
+  "best_for": ["Large regulated enterprises wanting a single vendor across pre-deployment, monitoring, and runtime", "Teams without an in-house AI security platform team"],
+  "not_for": ["Small teams wanting OSS"],
+  "pricing_summary": "Enterprise; contact for pricing.",
+  "integration_effort": "high",
+  "team_skill_required": "Enterprise IT engagement model.",
+  "url": "https://www.robustintelligence.com/",
+  "last_reviewed": "2026-05-01"
+}

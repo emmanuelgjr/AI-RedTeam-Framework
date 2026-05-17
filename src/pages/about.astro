@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Emmanuel Guilherme Jr.',
+  url: 'https://github.com/emmanuelgjr',
+  sameAs: ['https://www.linkedin.com/in/emmanuelgjr/', 'https://genai.owasp.org/'],
+};
+---
+
+<BaseLayout
+  title="About — AI Red Team Framework"
+  description="About the author and the four-repo AI security portfolio."
+  structuredData={structuredData}
+>
+  <section class="max-w-3xl mx-auto px-6 lg:px-8 py-12">
+    <p class="text-sm font-medium text-accent-700">About</p>
+    <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900 mt-2">About the author</h1>
+
+    <div class="prose prose-lg max-w-prose-wide mt-8">
+      <p>
+        <strong>Emmanuel Guilherme Jr.</strong> is a Senior Global Information
+        Technology Auditor and AI security researcher based in Toronto, Canada.
+      </p>
+      <p>
+        He co-leads the Data Security Initiative of the
+        <strong>OWASP GenAI Security Project</strong>, contributing to the
+        <em>GenAI Data Security Risks and Mitigations 2026</em> publication.
+        He serves as a <strong>Candidate Expert</strong> on Canada's mirror
+        committee for <strong>ISO/IEC JTC 1/SC 42</strong>. He co-founded the
+        Toronto chapter of Threat Modeling Connect and is a technical reviewer
+        for Packt publications on AI security.
+      </p>
+      <p>
+        His professional work spans IT audit at a Tier 1 multinational, an
+        in-house Red Team build at a Canadian Schedule I bank — including
+        AI-augmented offensive tooling (NodeZero, Cymulate) — and AI security
+        research at McMaster University.
+      </p>
+      <p>
+        Find him at <a href="https://www.linkedin.com/in/emmanuelgjr/">LinkedIn</a> ·
+        <a href="https://github.com/emmanuelgjr">GitHub</a>.
+      </p>
+      <h2>Cite this work</h2>
+      <p class="font-mono text-sm">Guilherme Jr., E. (2026). AI Red Team Framework (Version 0.1.0). https://airedteam.dev</p>
+    </div>
+  </section>
+</BaseLayout>

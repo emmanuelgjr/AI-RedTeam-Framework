@@ -1,0 +1,57 @@
+{
+  "id": "ATK-017",
+  "name": "Embedding Inversion",
+  "category": "Data integrity",
+  "applies_to": [
+    "LLM",
+    "RAG"
+  ],
+  "prerequisites": [
+    "System exposes embedding vectors externally (via an API, public dataset, or accidental egress).",
+    "Embeddings were derived from sensitive source content (personal data, internal documents)."
+  ],
+  "test_approach": "With written authorization, the tester applies published embedding-inversion techniques against exposed embeddings, attempting to reconstruct approximate source text. The tester reports reconstruction quality on a controlled corpus to inform privacy risk assessment.",
+  "expected_evidence": [
+    "Source embeddings used (with provenance).",
+    "Reconstruction outputs.",
+    "Similarity scores against original source content."
+  ],
+  "detection_signals": [
+    "Bulk export of embedding vectors via API.",
+    "Unusual query patterns characteristic of inversion-tool scripts."
+  ],
+  "defensive_recommendations": [
+    "Treat embeddings of personal data as personal data; restrict export.",
+    "Apply DP-style noise injection to embeddings where the use case permits.",
+    "Restrict embedding API access via authentication, rate limiting, and audit.",
+    "Reference AI-CTRL-013."
+  ],
+  "framework_mappings": {
+    "owasp_llm_top_10": [
+      "LLM06:2025"
+    ],
+    "mitre_atlas": [
+      "AML.T0024"
+    ],
+    "nist_ai_rmf": [
+      "MEASURE-2.10"
+    ]
+  },
+  "ai_controls_catalog_refs": [
+    "AI-CTRL-013",
+    "AI-CTRL-015"
+  ],
+  "references": [
+    {
+      "title": "Song et al. — Information Leakage in Embedding Models",
+      "url": "https://arxiv.org/abs/2004.00053"
+    },
+    {
+      "title": "NIST AI 100-2e2023 — Adversarial Machine Learning",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2023.pdf"
+    }
+  ],
+  "author": "Emmanuel Guilherme Jr.",
+  "created": "2026-05-01",
+  "last_reviewed": "2026-05-01"
+}

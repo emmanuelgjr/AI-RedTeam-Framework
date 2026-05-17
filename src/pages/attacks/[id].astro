@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const attacks = await getCollection('attacks');
+  return attacks.map((a) => ({ params: { id: a.data.id }, props: { attack: a.data } }));
+}
+const { attack } = Astro.props;
+const fm = attack.framework_mappings;
+---
+
+<BaseLayout
+  title={`${attack.name} (${attack.id}) — AI Red Team Framework`}
+  description={attack.test_approach.slice(0, 160)}
+  ogType="article"
+>
+  <article class="max-w-content mx-auto px-6 lg:px-8 py-12">
+    <a href="/attacks" class="text-sm text-ink-500 hover:text-accent-700">← All attack patterns</a>
+
+    <header class="border-b border-ink-200 pb-8 mt-3 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-2">
+        <span class="font-mono text-sm text-ink-500">{attack.id}</span>
+        <span class="badge-accent">{attack.category}</span>
+      </div>
+      <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900">{attack.name}</h1>
+      <p class="mt-3 text-sm text-ink-500">
+        Applies to: {attack.applies_to.join(', ')} · Last reviewed {attack.last_reviewed}
+      </p>
+    </header>
+
+    <div class="prose prose-lg max-w-prose-wide">
+      <h2>Prerequisites</h2>
+      <ul>{attack.prerequisites.map((p) => <li>{p}</li>)}</ul>
+
+      <h2>Test approach</h2>
+      <p>{attack.test_approach}</p>
+
+      <h2>Expected evidence</h2>
+      <ul>{attack.expected_evidence.map((p) => <li>{p}</li>)}</ul>
+
+      <h2>Detection signals</h2>
+      <ul>{attack.detection_signals.map((p) => <li>{p}</li>)}</ul>
+
+      <h2>Defensive recommendations</h2>
+      <ul>{attack.defensive_recommendations.map((p) => <li>{p}</li>)}</ul>
+
+      <h2>Framework mappings</h2>
+      <ul>
+        {fm.owasp_llm_top_10?.length && <li><strong>OWASP LLM Top 10:</strong> {fm.owasp_llm_top_10.join(', ')}</li>}
+        {fm.owasp_agentic_top_10?.length && <li><strong>OWASP Agentic Top 10:</strong> {fm.owasp_agentic_top_10.join(', ')}</li>}
+        {fm.mitre_atlas?.length && <li><strong>MITRE ATLAS:</strong> {fm.mitre_atlas.join(', ')}</li>}
+        {fm.nist_ai_rmf?.length && <li><strong>NIST AI RMF:</strong> {fm.nist_ai_rmf.join(', ')}</li>}
+      </ul>
+
+      {attack.ai_controls_catalog_refs.length > 0 && (
+        <>
+          <h2>Related AI Controls Catalog entries</h2>
+          <ul>
+            {attack.ai_controls_catalog_refs.map((id) => (
+              <li><a href={`https://aicontrolscatalog.dev/controls/${id}`}>{id}</a></li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      <h2>References</h2>
+      <ul>
+        {attack.references.map((r) => (
+          <li><a href={r.url} target="_blank" rel="noopener noreferrer">{r.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</BaseLayout>

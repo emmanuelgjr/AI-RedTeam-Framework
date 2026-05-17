@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PlannerWizard from '../components/EngagementPlanner/PlannerWizard.tsx';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Generate a working Rules of Engagement for an AI red team engagement',
+  description: 'Answer 12 questions about your engagement; download a professionally drafted Word ROE.',
+  step: [
+    'Engagement type',
+    'Target system type and name',
+    'Deployment model',
+    'Data sensitivity',
+    'Autonomy level',
+    'Regulatory regime',
+    'Engagement duration',
+    'Test team composition',
+    'Test environment',
+    'Authorization scope',
+    'Out-of-scope hard limits',
+    'RACI and sign-off',
+  ].map((name, idx) => ({ '@type': 'HowToStep', position: idx + 1, name })),
+};
+---
+
+<BaseLayout
+  title="Engagement Planner — generate a working ROE in 5 minutes — AI Red Team Framework"
+  description="Answer 12 questions about your engagement; download a professionally drafted Rules of Engagement document tied to MITRE ATLAS, OWASP, and your regulatory regime."
+  structuredData={structuredData}
+>
+  <section class="max-w-3xl mx-auto px-6 lg:px-8 py-12">
+    <p class="text-sm font-medium text-accent-700">Engagement Planner</p>
+    <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900 mt-2">
+      Generate a working Rules of Engagement in 5 minutes
+    </h1>
+    <p class="mt-3 text-ink-600">
+      Answer 12 questions. Download a 13-section ROE as a Word document, ready
+      for markup and sign-off. Your inputs never leave your browser.
+    </p>
+
+    <div class="mt-10">
+      <PlannerWizard client:load />
+    </div>
+  </section>
+</BaseLayout>

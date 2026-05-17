@@ -1,0 +1,59 @@
+{
+  "id": "ATK-022",
+  "name": "Supply Chain — Compromised Dataset",
+  "category": "Data integrity",
+  "applies_to": [
+    "LLM",
+    "Traditional ML",
+    "Computer Vision"
+  ],
+  "prerequisites": [
+    "Target organization uses third-party datasets for training, fine-tuning, or evaluation.",
+    "Datasets are ingested without provenance verification or content scanning."
+  ],
+  "test_approach": "Defensive assessment: the tester reviews dataset provenance and verification controls. Where authorized, the tester ingests a known-test-poisoned dataset in a non-production training pipeline and observes whether downstream evaluation detects the poison.",
+  "expected_evidence": [
+    "Dataset provenance records (per AI-CTRL-002).",
+    "Verification configuration evidence.",
+    "Simulated-poisoning detection results."
+  ],
+  "detection_signals": [
+    "Dataset entries from unverified publishers.",
+    "Evaluation metric divergence on canary subsets post-training.",
+    "Dataset additions outside change-controlled paths."
+  ],
+  "defensive_recommendations": [
+    "Verify dataset provenance and apply content scanning before ingestion.",
+    "Hold out canary subsets that detect targeted poisoning at evaluation.",
+    "Reference AI-CTRL-002 (Data Provenance) and AI-CTRL-017 (Evaluation Gates)."
+  ],
+  "framework_mappings": {
+    "owasp_llm_top_10": [
+      "LLM03:2025"
+    ],
+    "mitre_atlas": [
+      "AML.T0020"
+    ],
+    "nist_ai_rmf": [
+      "MAP-2.3",
+      "MEASURE-2.10"
+    ]
+  },
+  "ai_controls_catalog_refs": [
+    "AI-CTRL-002",
+    "AI-CTRL-017"
+  ],
+  "references": [
+    {
+      "title": "OWASP LLM03:2025 — Training Data Poisoning",
+      "url": "https://genai.owasp.org/llm-top-10/"
+    },
+    {
+      "title": "NIST AI 100-2e2023 — Adversarial Machine Learning",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2023.pdf"
+    }
+  ],
+  "author": "Emmanuel Guilherme Jr.",
+  "created": "2026-05-01",
+  "last_reviewed": "2026-05-01"
+}

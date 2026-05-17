@@ -1,0 +1,57 @@
+{
+  "id": "ATK-018",
+  "name": "Model Theft — Extraction via API",
+  "category": "Model integrity",
+  "applies_to": [
+    "LLM",
+    "Traditional ML",
+    "Computer Vision"
+  ],
+  "prerequisites": [
+    "Target model is exposed via an API permitting sufficient query volume.",
+    "No anomaly detection on inference traffic patterns."
+  ],
+  "test_approach": "With written authorization and within a documented query budget, the tester issues structured queries designed to enable training a surrogate model approximating the target's behavior. The tester reports the surrogate's similarity to the target as evidence of the attack's feasibility.",
+  "expected_evidence": [
+    "Query corpus used.",
+    "Surrogate model evaluation report.",
+    "Resource consumption metrics."
+  ],
+  "detection_signals": [
+    "Single source generating high-volume, structurally varied queries.",
+    "Query patterns matching public extraction-attack corpora.",
+    "Sudden increase in API spend per source."
+  ],
+  "defensive_recommendations": [
+    "Rate limit and pattern-detect on inference traffic.",
+    "Apply output perturbation where consistent with use case.",
+    "Restrict API access via authenticated keys with quotas and behavioral monitoring."
+  ],
+  "framework_mappings": {
+    "owasp_llm_top_10": [
+      "LLM10:2025"
+    ],
+    "mitre_atlas": [
+      "AML.T0024"
+    ],
+    "nist_ai_rmf": [
+      "MEASURE-2.7"
+    ]
+  },
+  "ai_controls_catalog_refs": [
+    "AI-CTRL-008"
+  ],
+  "references": [
+    {
+      "title": "Tramer et al. — Stealing Machine Learning Models via Prediction APIs",
+      "url": "https://arxiv.org/abs/1609.02943"
+    },
+    {
+      "title": "OWASP LLM10:2025 — Unbounded Consumption",
+      "url": "https://genai.owasp.org/llm-top-10/"
+    }
+  ],
+  "author": "Emmanuel Guilherme Jr.",
+  "created": "2026-05-01",
+  "last_reviewed": "2026-05-01"
+}

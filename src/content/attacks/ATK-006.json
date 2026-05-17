@@ -1,0 +1,40 @@
+{
+  "id": "ATK-006",
+  "name": "Refusal Evasion / Jailbreak",
+  "category": "Evaluation & guardrail bypass",
+  "applies_to": ["LLM", "Multi-modal", "Agentic AI"],
+  "prerequisites": [
+    "Target system enforces policy boundaries via system prompt, output filtering, or training-time refusal patterns.",
+    "Boundaries are enforced primarily through pattern-matching rather than semantic understanding."
+  ],
+  "test_approach": "With written authorization, the tester applies known refusal-evasion patterns from public research and defensive corpora: roleplay framing, hypothetical framing, fictional narrative wrapping, character-substitution encoding, language-shift, base-encoding payloads. The tester targets policy boundaries documented for the system (e.g., 'must not produce X') and records which evasions succeed.",
+  "expected_evidence": [
+    "Test prompt corpus used (with provenance — public corpus references).",
+    "Full request/response logs.",
+    "Comparison of guardrail behavior between successful and unsuccessful evasions."
+  ],
+  "detection_signals": [
+    "Inputs matching known evasion patterns (regex / embedding similarity to public corpora).",
+    "Inputs with unusual encoding density or non-natural language characteristics.",
+    "Outputs that satisfy semantic intent of a refusal-target despite passing simple keyword filters."
+  ],
+  "defensive_recommendations": [
+    "Use semantic policy classifiers rather than only keyword-based filtering.",
+    "Re-evaluate the output against the original policy before delivery, not only the input.",
+    "Maintain an internal corpus of recent jailbreak patterns and re-test continuously.",
+    "Reference AI-CTRL-003 for the program-level testing control."
+  ],
+  "framework_mappings": {
+    "owasp_llm_top_10": ["LLM01:2025"],
+    "mitre_atlas": ["AML.T0054"],
+    "nist_ai_rmf": ["MEASURE-2.7", "MANAGE-2.2"]
+  },
+  "ai_controls_catalog_refs": ["AI-CTRL-003", "AI-CTRL-007"],
+  "references": [
+    { "title": "OWASP LLM01:2025", "url": "https://genai.owasp.org/llm-top-10/" },
+    { "title": "Zou et al. — Universal and Transferable Adversarial Attacks on Aligned Language Models", "url": "https://arxiv.org/abs/2307.15043" }
+  ],
+  "author": "Emmanuel Guilherme Jr.",
+  "created": "2026-05-01",
+  "last_reviewed": "2026-05-01"
+}

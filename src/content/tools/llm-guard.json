@@ -1,0 +1,16 @@
+{
+  "slug": "llm-guard",
+  "name": "LLM Guard",
+  "vendor": "Protect AI",
+  "type": "open-source",
+  "category": ["guardrail-testing"],
+  "what_it_does": "Input and output scanner library for LLM applications. Bundles PII detection, prompt-injection heuristics, toxicity scoring, secrets detection, code-execution detection, and similar checks that can be composed into pipelines.",
+  "what_it_doesnt_do": "It's a building-block library, not a turnkey policy engine. Some scanners are noisy; expect tuning. Performance overhead at scale needs design consideration.",
+  "best_for": ["Building input/output filtering pipelines for in-house LLM apps", "Replacing ad-hoc regex scanning with composable, tested scanners"],
+  "not_for": ["Use-cases where latency budgets are extremely tight without careful scanner selection"],
+  "pricing_summary": "Free.",
+  "integration_effort": "medium",
+  "team_skill_required": "Python; comfort tuning thresholds.",
+  "url": "https://github.com/protectai/llm-guard",
+  "last_reviewed": "2026-05-01"
+}

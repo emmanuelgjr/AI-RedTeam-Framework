@@ -1,0 +1,16 @@
+{
+  "slug": "cymulate",
+  "name": "Cymulate",
+  "vendor": "Cymulate",
+  "type": "commercial",
+  "category": ["BAS"],
+  "what_it_does": "Breach-and-attack simulation platform with broad coverage across email, endpoint, network, and cloud. Provides repeatable attack execution useful for validating detection engineering — including detections targeted at Shadow AI egress and AI-related abuse patterns.",
+  "what_it_doesnt_do": "Not an AI model evaluation tool. The AI-related modules are useful for ecosystem testing (detection, response) rather than for assessing the AI system itself.",
+  "best_for": ["Detection engineering teams validating SOC coverage of AI-related attack patterns", "Regulated enterprises with periodic-control-validation requirements"],
+  "not_for": ["Model adversarial robustness testing"],
+  "pricing_summary": "Enterprise; contact for pricing.",
+  "integration_effort": "medium",
+  "team_skill_required": "Detection engineering / SOC operations.",
+  "url": "https://cymulate.com/",
+  "last_reviewed": "2026-05-01"
+}

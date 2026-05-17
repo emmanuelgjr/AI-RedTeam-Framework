@@ -1,0 +1,16 @@
+{
+  "slug": "calypso-ai",
+  "name": "Calypso AI",
+  "vendor": "Calypso AI",
+  "type": "commercial",
+  "category": ["guardrail-testing", "model-eval"],
+  "what_it_does": "AI security and governance platform with attention to enterprise policy enforcement and inspection of inputs/outputs across managed and SaaS AI tools. Heritage in U.S. public-sector AI assurance.",
+  "what_it_doesnt_do": "Coverage and depth vary by category; do not assume parity with the largest established AI security vendors in every dimension. Like other category leaders, expect feature roadmap, not finished product, for newest threat categories.",
+  "best_for": ["Public-sector and regulated enterprise buyers prioritizing governance integration"],
+  "not_for": ["Teams looking for OSS or a research-grade evaluation harness"],
+  "pricing_summary": "Enterprise; contact for pricing.",
+  "integration_effort": "medium",
+  "team_skill_required": "Enterprise admin / IAM familiarity.",
+  "url": "https://calypsoai.com/",
+  "last_reviewed": "2026-05-01"
+}

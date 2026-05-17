@@ -1,0 +1,16 @@
+{
+  "slug": "horizon3-nodezero",
+  "name": "Horizon3.ai NodeZero",
+  "vendor": "Horizon3.ai",
+  "type": "commercial",
+  "category": ["BAS", "automated-redteam"],
+  "what_it_does": "Autonomous penetration-testing platform that orchestrates real attacker tradecraft across enterprise IT infrastructure. AI-augmented decision making within the platform; valuable for the broader attack-surface context within which AI systems sit (an LLM agent's blast radius depends on the network and identity it can reach).",
+  "what_it_doesnt_do": "It is not primarily an AI-content red-team tool — it does not focus on prompt injection or model evaluation. Pair with PyRIT/Promptfoo/etc. for AI-specific testing. As with any autonomous pentest, scoping discipline and explicit authorization are essential.",
+  "best_for": ["Regulated enterprises validating end-to-end blast radius around AI-enabled infrastructure", "Continuous purple-team programs"],
+  "not_for": ["Standalone AI content evaluation"],
+  "pricing_summary": "Enterprise; contact for pricing.",
+  "integration_effort": "medium",
+  "team_skill_required": "Operational pentesting / red-team familiarity.",
+  "url": "https://horizon3.ai/",
+  "last_reviewed": "2026-05-01"
+}

@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const chapters = (await getCollection('playbook')).sort((a, b) => a.data.chapter - b.data.chapter);
+---
+
+<BaseLayout
+  title="Playbook — AI Red Team Framework"
+  description="15-chapter playbook on how to stand up, run, govern, and mature an AI red team function at a regulated enterprise."
+>
+  <section class="max-w-3xl mx-auto px-6 lg:px-8 py-12">
+    <p class="text-sm font-medium text-accent-700">Playbook</p>
+    <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900 mt-2">
+      The 15-chapter playbook
+    </h1>
+    <p class="mt-3 text-ink-600">
+      Read chapters 1–5 in order. After that, jump to whichever chapter
+      answers a question you have today.
+    </p>
+
+    <ol class="mt-10 space-y-3">
+      {chapters.map((c) => (
+        <li>
+          <a href={`/playbook/${c.slug}`} class="card-interactive flex items-start justify-between gap-4">
+            <div>
+              <p class="font-mono text-xs text-ink-500">Chapter {String(c.data.chapter).padStart(2, '0')}</p>
+              <h2 class="text-lg font-semibold text-ink-900 mt-0.5">{c.data.title}</h2>
+              <p class="text-sm text-ink-600 mt-1">{c.data.description}</p>
+            </div>
+            <span class="text-sm text-ink-400">→</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>

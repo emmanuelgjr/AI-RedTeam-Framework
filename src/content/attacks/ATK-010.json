@@ -1,0 +1,42 @@
+{
+  "id": "ATK-010",
+  "name": "Insecure Output Handling — Code Execution",
+  "category": "Output handling",
+  "applies_to": ["LLM", "Agentic AI"],
+  "prerequisites": [
+    "Downstream system executes code emitted by the model (e.g., generated SQL run against a database, generated shell commands run by an agent, generated Python evaluated in a sandbox).",
+    "Lack of strong sandboxing or input parameterization between model output and execution."
+  ],
+  "test_approach": "With written authorization in a non-production environment, the tester crafts prompts that cause the model to emit code containing injection payloads (SQL injection, command injection, prototype pollution, deserialization), and observes whether the downstream executor invokes the payload. The tester does not exercise these attacks against production infrastructure.",
+  "expected_evidence": [
+    "Prompts that elicited malicious code generation.",
+    "Generated code containing the payloads.",
+    "Logs from the executor showing execution (or block).",
+    "Sandbox isolation evidence."
+  ],
+  "detection_signals": [
+    "Generated code containing untrusted-style SQL fragments, shell metacharacters, deserialization markers.",
+    "Executor logs showing commands not derivable from user intent.",
+    "Network egress from the executor to unexpected destinations."
+  ],
+  "defensive_recommendations": [
+    "Treat model output as untrusted; parameterize all generated SQL, never pass to shell directly.",
+    "Sandboxed execution with strict resource and network limits for any generated code execution path.",
+    "Static analysis or LLM-based pre-execution review for high-impact actions.",
+    "Cross-reference AI-CTRL-007 and AI-CTRL-019."
+  ],
+  "framework_mappings": {
+    "owasp_llm_top_10": ["LLM02:2025"],
+    "owasp_agentic_top_10": ["AAI02"],
+    "mitre_atlas": ["AML.T0050"],
+    "nist_ai_rmf": ["MEASURE-2.7", "MANAGE-2.2"]
+  },
+  "ai_controls_catalog_refs": ["AI-CTRL-007", "AI-CTRL-019"],
+  "references": [
+    { "title": "OWASP LLM02:2025 — Insecure Output Handling", "url": "https://genai.owasp.org/llm-top-10/" },
+    { "title": "MITRE ATLAS", "url": "https://atlas.mitre.org/" }
+  ],
+  "author": "Emmanuel Guilherme Jr.",
+  "created": "2026-05-01",
+  "last_reviewed": "2026-05-01"
+}

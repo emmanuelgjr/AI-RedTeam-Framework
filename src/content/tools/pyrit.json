@@ -1,0 +1,16 @@
+{
+  "slug": "pyrit",
+  "name": "PyRIT",
+  "vendor": "Microsoft",
+  "type": "open-source",
+  "category": ["automated-redteam", "prompt-testing"],
+  "what_it_does": "Python Risk Identification Toolkit for generative AI. Orchestrates attack prompts against target endpoints, supports multi-turn scoring, and integrates with custom converters and scorers for systematic adversarial evaluation.",
+  "what_it_doesnt_do": "Does not ship with a turnkey UI or a curated attack-pattern library out of the box — you write the orchestrators. Does not include any reporting layer suitable for executive deliverables; expect to build that on top.",
+  "best_for": ["Detection engineers and ML engineers who want a programmatic, scriptable harness", "Repeated regression-style evaluation in CI/CD", "Custom attack development against your own model endpoints"],
+  "not_for": ["Teams expecting a click-and-test commercial product", "First-week-of-an-AI-red-team-program proof of concept where you need a demo today"],
+  "pricing_summary": "Free (MIT license).",
+  "integration_effort": "medium",
+  "team_skill_required": "Python proficient; comfortable building custom orchestrators and scorers.",
+  "url": "https://github.com/Azure/PyRIT",
+  "last_reviewed": "2026-05-01"
+}

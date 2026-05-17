@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const templates = [
+  { name: 'AI Red Team Charter', file: 'ai-redteam-charter.docx', description: 'Foundational charter document — mission, scope, authority, RACI, ethics. Customize and ratify with sponsoring executive.' },
+  { name: 'Rules of Engagement (master template)', file: 'roe-master-template.docx', description: 'Master ROE template with all 13 sections and annexes. The Planner generates pre-filled versions; this is the blank.' },
+  { name: 'RACI Matrix', file: 'raci-matrix.xlsx', description: 'Standard RACI matrix tailored to AI red team engagements.' },
+  { name: 'Engagement Brief (1-pager)', file: 'engagement-brief-1pager.docx', description: 'Pre-engagement brief for executive sponsor signoff.' },
+  { name: 'Daily Standup Note', file: 'daily-standup-note.md', description: 'Markdown standup template for engagement-internal coordination.' },
+  { name: 'Exit Briefing Deck', file: 'exit-briefing-deck.pptx', description: 'Slide deck for engagement exit briefing.' },
+  { name: 'Executive Summary Report', file: 'exec-summary-report.docx', description: '1–2 page report for sponsoring executive and AI Governance Committee.' },
+  { name: 'Audit-Ready Findings Report', file: 'audit-findings-report.docx', description: '10–20 page report mapped to ISO 42001 / NIST AI RMF / EU AI Act.' },
+  { name: 'Technical Findings Report', file: 'technical-findings-report.docx', description: 'Engineering-depth findings report with per-finding reproduction.' },
+  { name: 'Quarterly Program Report', file: 'quarterly-program-report.docx', description: 'Board-ready quarterly program report.' },
+];
+---
+
+<BaseLayout
+  title="Templates — AI Red Team Framework"
+  description="10 downloadable templates: charter, ROE master, RACI, executive / audit / technical reports."
+>
+  <section class="max-w-content mx-auto px-6 lg:px-8 py-12">
+    <p class="text-sm font-medium text-accent-700">Templates</p>
+    <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900 mt-2">10 downloadable templates</h1>
+    <p class="mt-3 text-ink-600 max-w-prose-wide">
+      Customize, sign, and operate. All templates are CC-BY 4.0 — use them as a
+      starting point and credit the framework.
+    </p>
+
+    <ul class="grid sm:grid-cols-2 gap-4 mt-10">
+      {templates.map((t) => (
+        <li class="card">
+          <h2 class="text-lg font-semibold text-ink-900">{t.name}</h2>
+          <p class="text-sm text-ink-600 mt-2">{t.description}</p>
+          <a href={`/templates/${t.file}`} class="btn btn-primary btn-sm mt-4" download>
+            Download
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <p class="mt-12 text-sm text-ink-500">
+      Note: in v0.1 these files are placeholder stubs in <code>/public/templates/</code>. The Engagement
+      Planner produces a fully populated Rules of Engagement directly; the static templates here will
+      be filled in subsequent releases.
+    </p>
+  </section>
+</BaseLayout>

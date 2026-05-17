@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const tools = (await getCollection('tools')).map((t) => t.data);
+const byType = (type: string) => tools.filter((t) => t.type === type);
+---
+
+<BaseLayout
+  title="Tool Inventory — AI Red Team Framework"
+  description="Honest reviews of 15 AI red team tools: open source, commercial, AI-augmented BAS. With explicit limitations."
+>
+  <section class="max-w-content mx-auto px-6 lg:px-8 py-12">
+    <p class="text-sm font-medium text-accent-700">Tooling</p>
+    <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900 mt-2">
+      Tool inventory and selection guide
+    </h1>
+    <p class="mt-3 text-ink-600 max-w-prose-wide">
+      {tools.length} tools across open-source, commercial, and AI-augmented BAS
+      categories. Each review includes what the tool does well, what it doesn't
+      do, and a "not for" section so you can rule it out fast.
+    </p>
+
+    {['open-source', 'commercial', 'freemium'].map((t) => (
+      <div class="mt-12">
+        <h2 class="font-display font-semibold text-2xl text-ink-900 tracking-tight capitalize">{t}</h2>
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+          {byType(t).map((tool) => (
+            <li>
+              <a href={`/tools/${tool.slug}`} class="card-interactive block h-full">
+                <h3 class="text-lg font-semibold text-ink-900">{tool.name}</h3>
+                <p class="text-xs text-ink-500">{tool.vendor}</p>
+                <p class="text-sm text-ink-600 mt-2 line-clamp-3">{tool.what_it_does}</p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  {tool.category.map((c) => <span class="badge-neutral">{c}</span>)}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+</BaseLayout>

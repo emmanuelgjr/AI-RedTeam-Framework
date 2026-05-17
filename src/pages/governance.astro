@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Governance — AI Red Team Framework"
+  description="How to govern an AI red team function: RACI, oversight, reporting, escalation."
+>
+  <section class="max-w-3xl mx-auto px-6 lg:px-8 py-12">
+    <p class="text-sm font-medium text-accent-700">Governance</p>
+    <h1 class="font-display font-semibold text-3xl md:text-4xl tracking-tight text-ink-900 mt-2">Governance of the AI Red Team function</h1>
+    <p class="mt-3 text-ink-600 max-w-prose-wide">
+      The governance pattern lives in <a href="/playbook/04-governance" class="text-accent-700 hover:underline">Playbook chapter 4</a>.
+      This page summarizes the headline points; read the chapter for context.
+    </p>
+
+    <div class="prose prose-lg max-w-prose-wide mt-8">
+      <h2>Where the function sits</h2>
+      <p>Second line of defense (independent assurance over first-line AI engineering). Some programs start in the first line; plan to move to second by the second annual review.</p>
+
+      <h2>Oversight committee</h2>
+      <p>AI Governance Committee chaired by an executive with risk authority (CISO, CRO, Chief AI Officer). Reviews findings monthly; escalates to the board quarterly.</p>
+
+      <h2>Escalation paths</h2>
+      <ol>
+        <li>Active customer impact → stop testing, notify Sponsor and CISO, hand to IR.</li>
+        <li>Pre-existing compromise discovered → stop testing, preserve evidence, notify CISO, hand to IR.</li>
+        <li>Regulator-relevant evidence → notify Legal and Compliance before any external communication.</li>
+      </ol>
+
+      <h2>Reporting</h2>
+      <ul>
+        <li>Executive summary (1–2 pages) monthly to AI Governance Committee.</li>
+        <li>Audit-ready findings (10–20 pages) per engagement.</li>
+        <li>Technical findings (engineering depth) per engagement.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

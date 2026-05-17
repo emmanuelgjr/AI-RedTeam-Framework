@@ -1,0 +1,16 @@
+{
+  "slug": "nemo-guardrails",
+  "name": "NeMo Guardrails",
+  "vendor": "NVIDIA",
+  "type": "open-source",
+  "category": ["guardrail-testing"],
+  "what_it_does": "Open-source toolkit for adding programmable rails (dialogue, safety, retrieval, execution) to LLM applications. Uses a Colang language for dialogue flows and integrates with model providers and retrieval layers.",
+  "what_it_doesnt_do": "Colang has a learning curve. Limited dynamic policy authoring outside Colang; teams already standardized on YAML/JSON policy formats may resist.",
+  "best_for": ["Teams adopting NVIDIA-stack components; building dialogue-flow constraints", "Adding structured rails to LangChain-style apps"],
+  "not_for": ["Teams resistant to a DSL; very small projects where the framework overhead exceeds value"],
+  "pricing_summary": "Free.",
+  "integration_effort": "medium",
+  "team_skill_required": "Python; willingness to learn Colang.",
+  "url": "https://github.com/NVIDIA/NeMo-Guardrails",
+  "last_reviewed": "2026-05-01"
+}

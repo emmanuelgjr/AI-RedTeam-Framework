@@ -1,0 +1,16 @@
+{
+  "slug": "garak",
+  "name": "garak",
+  "vendor": "NVIDIA (community)",
+  "type": "open-source",
+  "category": ["automated-redteam", "model-eval"],
+  "what_it_does": "LLM vulnerability scanner. Runs probes spanning prompt injection, encoding bypasses, toxic generation, and known jailbreaks against a wide range of model endpoints, then reports per-probe pass/fail with examples.",
+  "what_it_doesnt_do": "Coverage is broad but uneven; some probes are dated relative to current model capabilities. Not designed for stateful, multi-turn agentic systems out of the box. Reporting is geared to engineers, not auditors.",
+  "best_for": ["Baseline scanning a new model or model version", "Continuous integration regression for fundamental risks", "Triaging which broad categories warrant deeper bespoke testing"],
+  "not_for": ["Sole tool for an enterprise red team — pair with a more targeted framework like PyRIT", "Agentic / multi-turn testing without scaffolding"],
+  "pricing_summary": "Free (Apache 2.0).",
+  "integration_effort": "low",
+  "team_skill_required": "Python familiarity; tolerance for noisy results that require triage.",
+  "url": "https://github.com/leondz/garak",
+  "last_reviewed": "2026-05-01"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "mindgard",
+  "name": "Mindgard",
+  "vendor": "Mindgard",
+  "type": "commercial",
+  "category": ["automated-redteam", "model-eval"],
+  "what_it_does": "Automated AI red-teaming platform from a UK-academic-rooted vendor. Strong on attack libraries derived from current research and on integration into CI for continuous evaluation.",
+  "what_it_doesnt_do": "Smaller vendor than some commercial peers; weigh vendor risk per your TPRM threshold. Reporting tailored to engineers; pair with internal capability to produce executive narratives.",
+  "best_for": ["Engineering-led AI security functions wanting research-current attack coverage", "Teams who want regular re-evaluation in CI rather than annual point-in-time tests"],
+  "not_for": ["Buyers needing a wide product surface from a single vendor"],
+  "pricing_summary": "Commercial; pricing not publicly listed.",
+  "integration_effort": "medium",
+  "team_skill_required": "Moderate technical.",
+  "url": "https://mindgard.ai/",
+  "last_reviewed": "2026-05-01"
+}
