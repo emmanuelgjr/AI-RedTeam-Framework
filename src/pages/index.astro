@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL;
 const attacks = await getCollection('attacks');
 const tools = await getCollection('tools');
 const playbook = await getCollection('playbook');
@@ -23,8 +24,8 @@ const playbook = await getCollection('playbook');
       Compliance crosswalk for OSFI E-21 and EU AI Act.
     </p>
     <div class="mt-8 flex flex-wrap gap-3">
-      <a href="/planner" class="btn btn-primary btn-lg">Try the Engagement Planner →</a>
-      <a href="/playbook" class="btn btn-secondary btn-lg">Open the Playbook</a>
+      <a href={`${base}planner`} class="btn btn-primary btn-lg">Try the Engagement Planner →</a>
+      <a href={`${base}playbook`} class="btn btn-secondary btn-lg">Open the Playbook</a>
     </div>
   </section>
 
@@ -35,19 +36,19 @@ const playbook = await getCollection('playbook');
         <p class="text-3xl font-semibold text-accent-700">{attacks.length}</p>
         <h3 class="mt-1 text-lg font-semibold text-ink-900">Attack patterns</h3>
         <p class="mt-2 text-sm text-ink-600">Mapped to OWASP LLM / Agentic Top 10, MITRE ATLAS, NIST AI RMF.</p>
-        <a href="/attacks" class="mt-3 inline-block text-sm text-accent-700 font-medium hover:text-accent-800">Browse →</a>
+        <a href={`${base}attacks`} class="mt-3 inline-block text-sm text-accent-700 font-medium hover:text-accent-800">Browse →</a>
       </div>
       <div class="card">
         <p class="text-3xl font-semibold text-accent-700">{tools.length}</p>
         <h3 class="mt-1 text-lg font-semibold text-ink-900">Tool reviews</h3>
         <p class="mt-2 text-sm text-ink-600">Open source, commercial, AI-augmented BAS. With honest limitations.</p>
-        <a href="/tools" class="mt-3 inline-block text-sm text-accent-700 font-medium hover:text-accent-800">Browse →</a>
+        <a href={`${base}tools`} class="mt-3 inline-block text-sm text-accent-700 font-medium hover:text-accent-800">Browse →</a>
       </div>
       <div class="card">
         <p class="text-3xl font-semibold text-accent-700">{playbook.length}</p>
         <h3 class="mt-1 text-lg font-semibold text-ink-900">Playbook chapters</h3>
         <p class="mt-2 text-sm text-ink-600">From charter to maturity model. Real-world tone, not academic.</p>
-        <a href="/playbook" class="mt-3 inline-block text-sm text-accent-700 font-medium hover:text-accent-800">Open →</a>
+        <a href={`${base}playbook`} class="mt-3 inline-block text-sm text-accent-700 font-medium hover:text-accent-800">Open →</a>
       </div>
     </div>
   </section>
@@ -56,7 +57,7 @@ const playbook = await getCollection('playbook');
     <div class="max-w-prose-wide">
       <h2 class="font-display font-semibold text-3xl text-ink-900 tracking-tight">The headline feature</h2>
       <p class="mt-4 text-ink-700 leading-relaxed">
-        The <a href="/planner" class="text-accent-700 hover:underline">Engagement Planner</a> is a
+        The <a href={`${base}planner`} class="text-accent-700 hover:underline">Engagement Planner</a> is a
         12-step wizard that turns "we need to red-team this" into a 13-section,
         professionally formatted Rules of Engagement document — including a
         tailored attack-pattern selection, tooling recommendations, and a

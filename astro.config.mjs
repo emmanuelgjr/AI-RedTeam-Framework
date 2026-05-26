@@ -5,7 +5,8 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-  site: 'https://airedteam.dev',
+  site: 'https://emmanuelgjr.github.io',
+  base: '/AI-RedTeam-Framework/',
   output: 'static',
   integrations: [tailwind({ applyBaseStyles: false }), react(), sitemap(), mdx()],
   build: { inlineStylesheets: 'auto' },

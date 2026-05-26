@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -21,7 +22,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </ul>
 
       <h2>Ethics</h2>
-      <p>Read <a href="/ethics">ETHICS</a> before contributing. This is a defensive resource; we do not host weaponized payloads or zero-days.</p>
+      <p>Read <a href={`${base}ethics`}>ETHICS</a> before contributing. This is a defensive resource; we do not host weaponized payloads or zero-days.</p>
 
       <h2>How to submit</h2>
       <p>Open a PR at <a href="https://github.com/emmanuelgjr/AI-RedTeam-Framework">github.com/emmanuelgjr/AI-RedTeam-Framework</a>.</p>

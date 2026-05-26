@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -28,7 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <tr><td>NYDFS Part 500</td><td>§500.05 — penetration testing</td><td>Engagement output where in scope</td></tr>
         </tbody>
       </table>
-      <p>For more depth see <a href="/playbook/12-compliance-mapping">Playbook chapter 12</a>.</p>
+      <p>For more depth see <a href={`${base}playbook/12-compliance-mapping`}>Playbook chapter 12</a>.</p>
     </div>
   </section>
 </BaseLayout>

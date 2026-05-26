@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL;
 const tools = (await getCollection('tools')).map((t) => t.data);
 const byType = (type: string) => tools.filter((t) => t.type === type);
 ---
@@ -27,7 +28,7 @@ const byType = (type: string) => tools.filter((t) => t.type === type);
         <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {byType(t).map((tool) => (
             <li>
-              <a href={`/tools/${tool.slug}`} class="card-interactive block h-full">
+              <a href={`${base}tools/${tool.slug}`} class="card-interactive block h-full">
                 <h3 class="text-lg font-semibold text-ink-900">{tool.name}</h3>
                 <p class="text-xs text-ink-500">{tool.vendor}</p>
                 <p class="text-sm text-ink-600 mt-2 line-clamp-3">{tool.what_it_does}</p>

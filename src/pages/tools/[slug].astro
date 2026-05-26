@@ -7,6 +7,7 @@ export async function getStaticPaths() {
   return tools.map((t) => ({ params: { slug: t.data.slug }, props: { tool: t.data } }));
 }
 const { tool } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -15,7 +16,7 @@ const { tool } = Astro.props;
   ogType="article"
 >
   <article class="max-w-3xl mx-auto px-6 lg:px-8 py-12">
-    <a href="/tools" class="text-sm text-ink-500 hover:text-accent-700">← All tools</a>
+    <a href={`${base}tools`} class="text-sm text-ink-500 hover:text-accent-700">← All tools</a>
 
     <header class="border-b border-ink-200 pb-8 mt-3 mb-8">
       <p class="text-xs text-ink-500 uppercase tracking-wide">{tool.vendor} · {tool.type}</p>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </ul>
       <h2>Board metrics (semi-annually)</h2>
       <p>Three to five metrics. Coverage rate of high-risk AI systems. Number of unremediated critical / high findings. Number of systems with adversarial testing in last quarter. Trend in repeat findings. Maturity assessment delta.</p>
-      <p>Read <a href="/playbook/10-metrics">Playbook chapter 10</a> for context and anti-patterns.</p>
+      <p>Read <a href={`${base}playbook/10-metrics`}>Playbook chapter 10</a> for context and anti-patterns.</p>
     </div>
   </section>
 </BaseLayout>
