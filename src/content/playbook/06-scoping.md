@@ -9,7 +9,7 @@ Scoping decides what you test, and therefore what you don't test. Skip scoping d
 
 ## Start from the inventory
 
-Pull the AI System Inventory ([see AI-CTRL-001](https://aicontrolscatalog.dev/controls/AI-CTRL-001) and the [AI Governance Toolkit's Inventory module](https://aigovernancetoolkit.dev/inventory)). For each system, rate four dimensions:
+Pull the AI System Inventory ([see AI-CTRL-001](https://emmanuelgjr.github.io/AI-Controls-Catalog/controls/AI-CTRL-001) and the [AI Governance Toolkit's Inventory module](https://emmanuelgjr.github.io/AI-Governance-Toolkit/inventory)). For each system, rate four dimensions:
 
 - **Impact** (1–5): If this system fails or is compromised, how bad?
 - **Exposure** (1–5): How accessible is it to external actors or to broad internal user groups?

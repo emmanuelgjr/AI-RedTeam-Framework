@@ -57,9 +57,15 @@ const fm = attack.framework_mappings;
       {attack.ai_controls_catalog_refs.length > 0 && (
         <>
           <h2>Related AI Controls Catalog entries</h2>
-          <ul>
+          <p class="text-sm text-ink-500 mb-2">These controls provide the audit test procedures that validate defences against this attack pattern.</p>
+          <ul class="not-prose space-y-2">
             {attack.ai_controls_catalog_refs.map((id) => (
-              <li><a href={`https://aicontrolscatalog.dev/controls/${id}`}>{id}</a></li>
+              <li>
+                <a href={`https://emmanuelgjr.github.io/AI-Controls-Catalog/controls/${id}`} class="inline-flex items-center gap-2 border border-ink-200 rounded-md px-3 py-2 hover:border-accent-300 hover:bg-accent-50/30 transition-colors" target="_blank" rel="noopener noreferrer">
+                  <span class="font-mono text-xs text-ink-500">{id}</span>
+                  <span class="text-sm text-accent-700">View control →</span>
+                </a>
+              </li>
             ))}
           </ul>
         </>

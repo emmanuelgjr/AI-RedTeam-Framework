@@ -32,7 +32,7 @@ When internal or external audit examines an AI red team program, they look for:
 5. **Independence** between testing function and tested function.
 6. **Methodology** documentation kept current.
 
-The [AI Controls Catalog](https://aicontrolscatalog.dev) provides the Test of Operating Effectiveness procedures auditors run. The AI red team produces the evidence those procedures consume.
+The [AI Controls Catalog](https://emmanuelgjr.github.io/AI-Controls-Catalog/) provides the Test of Operating Effectiveness procedures auditors run. The AI red team produces the evidence those procedures consume.
 
 ## What regulators ask, separately
 
