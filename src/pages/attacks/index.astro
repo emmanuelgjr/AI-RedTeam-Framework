@@ -21,6 +21,11 @@ const categories = Array.from(new Set(attacks.map((a) => a.category))).sort();
       evidence, detection signals, and defensive recommendations. Patterns are
       framed as <em>how to test defenses against</em> — not as offensive recipes.
     </p>
+    <p class="mt-4">
+      <a href={`${base}attacks/submit`} class="inline-flex items-center text-sm font-medium text-accent-700 hover:text-accent-800">
+        Field-tested a pattern that isn't here? Submit it →
+      </a>
+    </p>
 
     {categories.map((cat) => (
       <div class="mt-12">
