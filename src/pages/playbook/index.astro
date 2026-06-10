@@ -23,7 +23,7 @@ const chapters = (await getCollection('playbook')).sort((a, b) => a.data.chapter
     <ol class="mt-10 space-y-3">
       {chapters.map((c) => (
         <li>
-          <a href={`${base}playbook/${c.slug}`} class="card-interactive flex items-start justify-between gap-4">
+          <a href={`${base}playbook/${c.id}`} class="card-interactive flex items-start justify-between gap-4">
             <div>
               <p class="font-mono text-xs text-ink-500">Chapter {String(c.data.chapter).padStart(2, '0')}</p>
               <h2 class="text-lg font-semibold text-ink-900 mt-0.5">{c.data.title}</h2>
