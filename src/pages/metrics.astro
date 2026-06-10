@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import MetricsDashboards from '../components/MetricsDashboards.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -32,6 +33,20 @@ const base = import.meta.env.BASE_URL;
       <h2>Board metrics (semi-annually)</h2>
       <p>Three to five metrics. Coverage rate of high-risk AI systems. Number of unremediated critical / high findings. Number of systems with adversarial testing in last quarter. Trend in repeat findings. Maturity assessment delta.</p>
       <p>Read <a href={`${base}playbook/10-metrics`}>Playbook chapter 10</a> for context and anti-patterns.</p>
+    </div>
+  </section>
+
+  <section class="max-w-content mx-auto px-6 lg:px-8 py-12 border-t border-ink-100">
+    <div class="max-w-3xl">
+      <h2 class="font-display font-semibold text-2xl md:text-3xl tracking-tight text-ink-900">What the dashboards look like</h2>
+      <p class="mt-3 text-ink-600 leading-relaxed">
+        Four views that cover the engagement, program, and board layers. The numbers
+        below are illustrative sample data — the point is the shape of the dashboard,
+        not the values. Rebuild these in whatever BI tool your findings already live in.
+      </p>
+    </div>
+    <div class="mt-8">
+      <MetricsDashboards />
     </div>
   </section>
 </BaseLayout>
