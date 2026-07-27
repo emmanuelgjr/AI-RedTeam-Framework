@@ -1,6 +1,6 @@
 {
   "name": "ai-redteam-framework",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Stand up an AI red team at a regulated enterprise.",
   "type": "module",
   "private": true,
