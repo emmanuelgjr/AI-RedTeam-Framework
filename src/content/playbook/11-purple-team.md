@@ -12,7 +12,7 @@ A red-only function produces reports. A purple-team function produces durable de
 Each high or critical AI red team finding becomes a detection-engineering opportunity. Workflow:
 
 1. AI red team produces finding with attack pattern (ATK-XXX) and reproduction evidence.
-2. Blue team (detection engineering) authors or tunes detection for the pattern, drawing from [Shadow-AI-Defense](https://shadowaidefense.dev/detections) where applicable.
+2. Blue team (detection engineering) authors or tunes detection for the pattern, drawing from [Shadow-AI-Defense](https://emmanuelgjr.github.io/Shadow-AI-Defense/detections) where applicable.
 3. Joint validation: AI red team re-runs the attack pattern; blue team verifies detection fires; together they tune for false-positive tolerance.
 4. Detection is added to the production library; the finding is closed only when both remediation and detection are in place.
 
