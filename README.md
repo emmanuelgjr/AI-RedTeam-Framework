@@ -2,22 +2,27 @@
 
 > Stand up an AI red team at a regulated enterprise.
 
-[![Site](https://img.shields.io/badge/site-airedteam.dev-9F1239)](https://airedteam.dev)
+[![Site](https://img.shields.io/badge/site-live-9F1239)](https://emmanuelgjr.github.io/AI-RedTeam-Framework/)
 [![License: MIT](https://img.shields.io/badge/code-MIT-slate)](LICENSE)
 [![Content: CC-BY 4.0](https://img.shields.io/badge/content-CC--BY%204.0-9F1239)](CONTENT-LICENSE)
-[![Attack patterns](https://img.shields.io/badge/attack%20patterns-25-9F1239)](https://airedteam.dev/attacks)
+[![Attack patterns](https://img.shields.io/badge/attack%20patterns-25-9F1239)](https://emmanuelgjr.github.io/AI-RedTeam-Framework/attacks/)
 
 The practitioner playbook + interactive tooling for planning, scoping,
 executing, and reporting AI red team engagements at regulated enterprises.
 
-[**Try the Engagement Planner →**](https://airedteam.dev/planner)
+[**Try the Engagement Planner →**](https://emmanuelgjr.github.io/AI-RedTeam-Framework/planner/)
 
-## What's inside (v0.1)
+## What's inside (v0.2)
 
 - 15-chapter playbook from charter to maturity model
 - **Engagement Planner** — answer 12 questions, download a professionally drafted Word Rules of Engagement
 - 25 attack patterns mapped to OWASP LLM Top 10, OWASP Agentic Top 10, MITRE ATLAS, NIST AI RMF
 - 15 tool reviews — open source, commercial, AI-augmented BAS — with honest limitations
+- **10 downloadable templates** — charter, ROE master, RACI matrix (Excel),
+  engagement brief, daily standup, exit briefing, and four report formats
+- **Metrics dashboards** — reference charts for program reporting (sample data)
+- **Pattern submission builder** — draft a schema-valid attack pattern in the
+  browser and open it as a PR
 - Compliance crosswalk: OSFI E-21, NIST AI RMF, ISO/IEC 42001
 
 ## Why this exists
@@ -53,7 +58,7 @@ npm run build
 ## Use it. Cite it.
 
 ```
-Guilherme Jr., E. (2026). AI Red Team Framework (Version 0.1.0). https://airedteam.dev
+Guilherme Jr., E. (2026). AI Red Team Framework (Version 0.2.0). https://emmanuelgjr.github.io/AI-RedTeam-Framework/
 ```
 
 ## Licensing
